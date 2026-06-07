@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: bandhanai-backend
+    runtime: node
+    rootDir: backend
+    buildCommand: npm install
+    startCommand: node server.js
+    envVars:
+      - key: JWT_SECRET
+        value: tdc_secret_key_2025
+      - key: NODE_ENV
+        value: production
