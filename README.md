@@ -12,8 +12,8 @@
 ## 🔐 Demo Credentials
 | Username | Password | Role |
 |---|---|---|
-| matchmaker1 | tdc@123 | Senior Matchmaker — Riya Kapoor |
-| matchmaker2 | tdc@456 | Matchmaker — Arjun Mehta |
+| matchmaker1 | tdc@123 | Senior Matchmaker — Anugrah Rai |
+
 
 ---
 
@@ -110,37 +110,6 @@ filtering approach as data grows.
 
 ---
 
-## 📁 Project Structure
-
-\`\`\`
-matchmaker/
-├── backend/
-│   ├── data/
-│   │   ├── profiles.json        # 100 dummy profiles
-│   │   ├── notes.json           # Matchmaker notes storage
-│   │   └── generateProfiles.js  # Profile generation script
-│   ├── routes/
-│   │   ├── auth.js              # Login + JWT
-│   │   ├── profiles.js          # Profile CRUD
-│   │   ├── matches.js           # Matching algo + AI scoring
-│   │   └── notes.js             # Notes CRUD
-│   ├── .env                     # Secret keys (not in repo)
-│   ├── server.js                # Express entry point
-│   └── package.json
-└── frontend/
-    ├── src/
-    │   ├── pages/
-    │   │   ├── Login.jsx         # Login screen
-    │   │   ├── Dashboard.jsx     # Client list + stats
-    │   │   └── Profile.jsx       # Biodata + matches + notes
-    │   ├── components/
-    │   │   └── Notes.jsx         # Notes component
-    │   ├── App.js                # Routes
-    │   └── index.js
-    └── package.json
-\`\`\`
-
----
 
 ## ⚙️ Run Locally
 
