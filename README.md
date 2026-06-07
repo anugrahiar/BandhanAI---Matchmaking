@@ -6,8 +6,8 @@
 ---
 
 ## 🔗 Live Demo
-- **Frontend:** (add Vercel link after deployment)
-- **Backend:** (add Render link after deployment)
+- **Frontend:** (https://bandhan-ai-matchmaking-h2ox.vercel.app)
+- **Backend:** (https://bandhanai-backend.onrender.com)
 
 ## 🔐 Demo Credentials
 | Username | Password | Role |
