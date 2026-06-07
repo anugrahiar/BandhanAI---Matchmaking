@@ -6,8 +6,9 @@ console.log('Groq key loaded:', !!process.env.GROQ_API_KEY);
 
 const app = express();
 // app.use(cors());
+
 app.use(cors({
-  origin: ['http://localhost:3000', 'https://bandhanai.vercel.app'],
+  origin: ['http://localhost:3000', 'https://bandhan-ai-matchmaking-h2ox.vercel.app/'],
   credentials: true
 }));
 
