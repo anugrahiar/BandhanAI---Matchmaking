@@ -9,9 +9,9 @@ export default function Notes({ profileId }) {
   const headers = { Authorization: `Bearer ${token}` };
 
   
-   useEffect(() => {
-    axios.get(`${process.env.REACT_APP_API_URL}/api/notes/${profileId}`
-, { headers })
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  useEffect(() => {
+    axios.get(`${process.env.REACT_APP_API_URL}/api/notes/${profileId}`, { headers })
       .then(r => setNotes(r.data.notes))
       .catch(() => {});
   }, [profileId]);
