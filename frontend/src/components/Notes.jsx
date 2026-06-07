@@ -10,7 +10,8 @@ export default function Notes({ profileId }) {
 
   
    useEffect(() => {
-    axios.get(`http://localhost:5000/api/notes/${profileId}`, { headers })
+    axios.get(`${process.env.REACT_APP_API_URL}/api/notes/${profileId}`
+, { headers })
       .then(r => setNotes(r.data.notes))
       .catch(() => {});
   }, [profileId]);
@@ -19,8 +20,8 @@ export default function Notes({ profileId }) {
     if (!text.trim()) return;
     setSaving(true);
     try {
-      const res = await axios.post(
-        `http://localhost:5000/api/notes/${profileId}`,
+      const res = await axios.post(`${process.env.REACT_APP_API_URL}/api/notes/${profileId}`
+,
         { text },
         { headers }
       );
@@ -32,8 +33,8 @@ export default function Notes({ profileId }) {
 
   async function deleteNote(noteId) {
     try {
-      await axios.delete(
-        `http://localhost:5000/api/notes/${profileId}/${noteId}`,
+     axios.delete(`${process.env.REACT_APP_API_URL}/api/notes/${profileId}/${noteId}`
+,
         { headers }
       );
       setNotes(prev => prev.filter(n => n.id !== noteId));

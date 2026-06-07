@@ -20,7 +20,7 @@ export default function Dashboard() {
   const token = localStorage.getItem('token');
 
   useEffect(() => {
-    axios.get('http://localhost:5000/api/profiles', {
+    axios.get(`${process.env.REACT_APP_API_URL}/api/profiles`, {
       headers: { Authorization: `Bearer ${token}` }
     }).then(r => setProfiles(r.data));
   }, [token]);

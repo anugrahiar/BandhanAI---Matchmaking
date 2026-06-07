@@ -15,15 +15,18 @@ export default function Profile() {
 
   useEffect(() => {
     const headers = { Authorization: `Bearer ${token}` };
-    axios.get(`http://localhost:5000/api/profiles/${id}`, { headers }).then(r => setProfile(r.data));
-    axios.get(`http://localhost:5000/api/matches/${id}`, { headers }).then(r => setMatches(r.data));
+    axios.get(`${process.env.REACT_APP_API_URL}/api/profiles/${id}`
+, { headers }).then(r => setProfile(r.data));
+    axios.get(`${process.env.REACT_APP_API_URL}/api/matches/${id}`
+, { headers }).then(r => setMatches(r.data));
   }, [id, token]);
 
   async function getAIScore(match) {
     if (aiScores[match.id]) return;
     setLoadingAI(prev => ({ ...prev, [match.id]: true }));
     try {
-      const res = await axios.post('http://localhost:5000/api/matches/ai-score', {
+      const res = await axios.post(`${process.env.REACT_APP_API_URL}/api/matches/ai-score`
+, {
         client: profile, candidate: match
       }, { headers: { Authorization: `Bearer ${token}` } });
       setAiScores(prev => ({ ...prev, [match.id]: res.data.explanation }));
